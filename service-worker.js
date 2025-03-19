@@ -1,16 +1,16 @@
-const CACHE_NAME = "offline-calculator-v1";
-const assetsToCache = [
-    "/",
-    "/index.html",
-    "/js/math.min.js",
-    "/js/script.js",
-    "style.css"
+const CACHE_NAME = "calculator-v1";
+const ASSETS_TO_CACHE = [
+    "/calculator-app/",
+    "/calculator-app/index.html",
+    "/calculator-app/js/script.js",
+    "/calculator-app/css/style.css",
+    "/calculator-app/icon.png"
 ];
 
 self.addEventListener("install", (event) => {
     event.waitUntil(
         caches.open(CACHE_NAME).then((cache) => {
-            return cache.addAll(assetsToCache);
+            return cache.addAll(ASSETS_TO_CACHE);
         })
     );
 });
