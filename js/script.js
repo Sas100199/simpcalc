@@ -1,3 +1,9 @@
+if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('/calculator-app/service-worker.js')
+    .then(() => console.log("Service Worker Registered"))
+    .catch(err => console.log("Service Worker Failed", err));
+}
+
 document.addEventListener("DOMContentLoaded", () => {
     const buttons = document.querySelectorAll('.button');
 
